@@ -152,7 +152,35 @@
   outline: none;
   background-color: transparent;
   border-bottom: 1px solid #cdcdce;
+  background-color: transparent !important;
 
+
+}
+#katech-chatbot-input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+#katech-chatbot-input,
+#katech-chatbot-input:-webkit-autofill,
+#katech-chatbot-input:-webkit-autofill:hover,
+#katech-chatbot-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, 0) inset !important;
+  background-color: transparent !important;
+  background-clip: text;
+}
+
+@keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+
+@-webkit-keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
 }
 
 #katech-chatbot-footer_action {

@@ -10,7 +10,6 @@ class ChatBotSDK {
     }
   }
   fetchConfig(configPath) {
-    // Assuming you fetch the JSON configuration from a server endpoint or local file
     fetch(configPath)
       .then((response) => response.json())
       .then((data) => {
