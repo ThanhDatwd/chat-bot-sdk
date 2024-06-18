@@ -24,15 +24,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [OptimizeCssAssetsPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
-  // plugins: [
-  //   new MiniCssExtractPlugin({
-  //     filename: 'styles.css',
-  //   }),
-  // ],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'index.css',
+    }),
+  ],
   optimization: {
     minimize: true, 
     minimizer: [
