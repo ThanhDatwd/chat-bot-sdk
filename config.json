@@ -1,0 +1,45 @@
+{
+    "apiKey": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJob2FuZ252NCIsImlhdCI6MTcxODM3MjU4NCwiZXhwIjoxNzE4NDU4OTg0fQ.SsbbrXPu4aMPCseLeuUxZjbyrpXi149Xgobv-WR9MZHQjFdACz6vpqRjU75mfO_6",
+    "conversationId": "0ef21a04-d79a-5598-8dda-1fec9d8f5292",
+    "botId": "49726695-97ab-4c14-89be-6322ba0d39f4",
+    "userId": "ac140002-8f4e-1c14-818f-587a1d230004",
+    "ui": {
+        "background": "",
+        "color": "",
+        "bot": {
+            "name": "Katech",
+            "avatar": "https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1717977600&semt=ais_user",
+            "background": "#007bff",
+            "color": "white"
+        },
+        "header": {
+            "style": "background:#2baeb0;color:white",
+            "html": ""
+        },
+        "body": {
+            "style": "",
+            "message": {
+                "in": {
+                    "style": ""
+                },
+                "out": {
+                    "style": ""
+                }
+            }
+        },
+        "footer": {
+            "style": "",
+            "html": ""
+        },
+        "loading": {
+            "style": "background:white;",
+            "html": ""
+        },
+        "greeting": {
+            "image": "https://observatorio.tec.mx/wp-content/uploads/2022/05/Chatboteducacio%CC%81n.jpeg",
+            "title": "Tôi có thể giúp gì cho bạn?",
+            "style": "",
+            "html": ""
+        }
+    }
+}

@@ -1,0 +1,312 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#katech-chatbot {
+  font-family: "Kanit", sans-serif !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* bottom: 20px;
+  right: 20px; */
+  z-index: 1000;
+  /* padding: 10px 20px; */
+  background: red;
+  width: 100vw;
+  height: 100vh;
+}
+
+#katech-chatbot-button {
+  font-family: "Kanit", sans-serif !important;
+  /* position: fixed; */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#katech-chatbot-container {
+  position: fixed;
+  /* bottom: 60px; */
+  /* right: 20px; */
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 360px;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#katech-chatbot-header-area {
+  position: relative;
+}
+
+#katech-chatbot-header_btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+#katech-chatbot-header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 16px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+}
+
+#katech-chatbot-header img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+#katech-chatbot-header_content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px
+}
+
+#katech-chatbot-header_content .subtitle {
+  font-size: 14px;
+}
+
+#katech-chatbot-header_content .title {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#katech-chatbot-body {
+  padding: 16px 10px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.katech-chatbot-footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  /* padding: 10px; */
+}
+
+#katech-chatbot-input {
+  font-family: "Kanit", sans-serif !important;
+  /* width: 100%; */
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #cdcdce;
+
+}
+
+#katech-chatbot-footer_action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  overflow: hidden;
+}
+
+#katech-chatbot-send-button {
+  font-family: "Kanit", sans-serif !important;
+  padding: 6px 16px;
+  border-radius: 99px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+/* MESSAGE */
+#katech-chatbot-message {
+  margin-bottom: 24px;
+  word-wrap: break-word;
+}
+
+#katech-chatbot-message.katech-user-message-group .katech-user-message {
+  font-size: 14px;
+  border-radius: 24px 24px 0px 24px;
+  padding: 16px;
+  background-color: #1360d8;
+  color: #fafafa;
+  overflow-x: auto !important;
+}
+
+#katech-chatbot-message.katech-bot-message-group {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+#katech-chatbot-message.katech-user-message-group {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+#katech-chatbot-message.katech-bot-message-group img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+#katech-chatbot-message.katech-bot-message-group .katech-bot-message {
+  font-size: 14px;
+  border-radius: 0px 24px 24px 24px;
+  padding: 16px;
+  background-color: #dcdddea5;
+  color: #111111;
+  overflow-x: auto !important;
+}
+
+.katech-bot-message p,
+.katech-user-message p {
+  margin: 0
+}
+
+.katech-bot-message {
+  overflow-x: auto !important;
+}
+
+#katech-chatbot-message.katech-bot-message-group {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+#katech-chatbot-message.katech-bot-message-group .katech-bot-message-action {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  right: 0;
+  transform: translate(-10%, 40%);
+}
+
+#katech-bot-message-action__like,
+#katech-bot-message-action__dislike {
+  cursor: pointer;
+  /* background: red; */
+  color: #007bff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.katech-bot-message-action__like__active,
+.katech-bot-message-action__dislike__active {
+  display: none;
+}
+
+#katech-bot-message-action__like.active .katech-bot-message-action__like__active,
+#katech-bot-message-action__dislike.active .katech-bot-message-action__dislike__active {
+  display: inline-block;
+}
+
+#katech-bot-message-action__like.active .katech-bot-message-action__like__inactive,
+#katech-bot-message-action__dislike.active .katech-bot-message-action__dislike__inactive {
+  display: none;
+}
+
+/* CSS GREETING */
+#katech-chatbot-greeting {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#katech-chatbot-greeting.hidden {
+  display: none;
+}
+
+#katech-chatbot-greeting img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+#katech-chatbot-greeting .title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* HANDLE CSS TYPING */
+.typing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing__dot {
+  width: 8px;
+  height: 8px;
+  background: #8d8c91;
+  border-radius: 50%;
+  opacity: 0;
+  animation: loadingFade 1s infinite;
+}
+
+.typing__dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
