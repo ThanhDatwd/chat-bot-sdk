@@ -3,7 +3,6 @@
   "version": "1.2.0",
   "description": "A simple SDK for integrating with our chat bot service",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open"
