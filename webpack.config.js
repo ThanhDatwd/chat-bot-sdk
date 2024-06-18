@@ -1,7 +1,4 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/js/chat-bot.js',
@@ -24,20 +21,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          'style-loader', // Inject CSS into the DOM
+          'css-loader',   // Turns CSS into CommonJS module
+        ],
       },
-    ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles.css',
-    }),
-  ],
-  optimization: {
-    minimize: true, 
-    minimizer: [
-      new TerserPlugin(),
-      new OptimizeCssAssetsPlugin(), 
     ],
   },
   devServer: {
