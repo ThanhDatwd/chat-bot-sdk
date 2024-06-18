@@ -17,7 +17,7 @@
             "html": ""
         },
         "body": {
-            "style": "",
+            "style": "", 
             "message": {
                 "in": {
                     "style": ""
@@ -40,6 +40,11 @@
             "title": "Tôi có thể giúp gì cho bạn?",
             "style": "",
             "html": ""
+        },
+        "open":{
+            "style":"",
+            "image":"https://cdn-icons-png.flaticon.com/512/8943/8943377.png",
+            "html":""
         }
     }
 }

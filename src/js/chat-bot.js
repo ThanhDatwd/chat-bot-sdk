@@ -1,30 +1,29 @@
-import '../css/styles.css';
+// import '../css/styles.css';
 class ChatBotSDK {
   constructor(config, ui) {
-    if (typeof config === 'string') {
+    if (typeof config === "string") {
       this.fetchConfig(config);
-  } else if (typeof config === 'object') {
+    } else if (typeof config === "object") {
       this.initConfig(config);
-  } else {
-      throw new Error('Invalid configuration type');
+    } else {
+      throw new Error("Invalid configuration type");
+    }
   }
-   
-  }
-fetchConfig(configPath) {
+  fetchConfig(configPath) {
     // Assuming you fetch the JSON configuration from a server endpoint or local file
     fetch(configPath)
-        .then(response => response.json())
-        .then(data => {
-            this.initConfig(data);
-        })
-        .catch(error => {
-            console.error('Error loading configuration:', error);
-        });
-}
+      .then((response) => response.json())
+      .then((data) => {
+        this.initConfig(data);
+      })
+      .catch((error) => {
+        console.error("Error loading configuration:", error);
+      });
+  }
 
-initConfig(config) {
+  initConfig(config) {
     if (!config.apiKey) {
-        throw new Error("API key is required");
+      throw new Error("API key is required");
     }
     this.apiKey = config.apiKey;
     this.loadStyles();
@@ -40,7 +39,7 @@ initConfig(config) {
     this.WS_URL_8080 = "ws://46.250.249.219:8000/ws/";
     (this.messageString = ""), (this.currentMessageElement = null);
     this.loading = false;
-}
+  }
   // LOAD FILE CSS
   loadStyles() {
     const linkHighlight = document.createElement("link");
@@ -84,8 +83,15 @@ initConfig(config) {
     const chatBot = document.createElement("div");
     chatBot.innerHTML = `
     <div id="katech-chatbot">
-    <button id="katech-chatbot-button">Chat with us</button>
-    <div  id="katech-chatbot-container" >
+    <div id="katech-chatbot-button-open">
+    ${
+      ui.open.html
+        ? ui.open.html
+        : `<button style="${ui.open.style}" id="katech-chatbot-button"> <img src="${ui.open.image}" alt=""></button>`
+    }
+       
+    </div>
+    <div  id="katech-chatbot-container" class="hidden" >
         <div id="katech-chatbot-header-area">
         ${
           ui.header.html
@@ -120,11 +126,13 @@ initConfig(config) {
         ${
           ui.footer.html
             ? ui.footer.html
-            : `<div style="${ui.body.style}" id="katech-chatbot-footer" class="katech-chatbot-footer">
+            : `<div style="${ui.footer.style}" id="katech-chatbot-footer" class="katech-chatbot-footer">
                   <input id="katech-chatbot-input" type="text" class="katech-chatbot-input"
                     placeholder="Type your message...">
                   <div id="katech-chatbot-footer_action">
-                    <div></div>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M9 7a5 5 0 0 1 10 0v8a7 7 0 1 1-14 0V9a1 1 0 0 1 2 0v6a5 5 0 0 0 10 0V7a3 3 0 1 0-6 0v8a1 1 0 1 0 2 0V9a1 1 0 1 1 2 0v6a3 3 0 1 1-6 0z" clip-rule="evenodd"></path></svg>
+                    </div>
                     <button style="background:${ui.bot.background}; color:${ui.bot.color}" id="katech-chatbot-send-button" class="katech-chatbot-send-button">
                       Send
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:${ui.bot.color};transform: ;msFilter:;">
@@ -141,13 +149,16 @@ initConfig(config) {
 
     document.body.appendChild(chatBot);
     // HANDLE EVENT LISTENER EVENT
-    const chatButton = document.getElementById("katech-chatbot-button");
+    const chatButtonOpen = document.getElementById(
+      "katech-chatbot-button-open"
+    );
     const chatButtonClose = document.getElementById(
       "katech-chatbot-header_btn-close"
     );
     const chatContainer = document.getElementById("katech-chatbot-container");
     const toggleChatContainer = () => {
       chatContainer.classList.toggle("hidden");
+      chatButtonOpen.classList.toggle("hidden");
     };
     const handleEnter = (value) => {
       if (value.key === "Enter") {
@@ -155,7 +166,7 @@ initConfig(config) {
       console.log("this is value when on key up", value);
     };
 
-    chatButton.addEventListener("click", toggleChatContainer);
+    chatButtonOpen.addEventListener("click", toggleChatContainer);
     chatButtonClose.addEventListener("click", toggleChatContainer);
     // chatButtonClose.addEventListener("click", toggleChatContainer);
 

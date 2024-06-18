@@ -1,50 +1,86 @@
 /* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-#katech-chatbot {
-  font-family: "Kanit", sans-serif !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* bottom: 20px;
-  right: 20px; */
-  z-index: 1000;
-  /* padding: 10px 20px; */
-  background: red;
-  width: 100vw;
-  height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
-#katech-chatbot-button {
+#katech-chatbot {
   font-family: "Kanit", sans-serif !important;
-  /* position: fixed; */
-  position: absolute;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red; */
+
+}
+
+#katech-chatbot-button-open {
+  font-family: "Kanit", sans-serif !important;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  padding: 10px 20px;
+
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+#katech-chatbot-button-open.hidden {
+  transition: all 0.5s ease-in-out;
+
+  opacity: 0;
+  bottom: -100%;
+  /* display: none; */
+}
+
+#katech-chatbot-button {
+  width: 60px;
+  height: 60px;
+  padding: 10px 10px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#katech-chatbot-button img {
+  width: 100%;
+  height: 100%;
 }
 
 #katech-chatbot-container {
   position: fixed;
-  /* bottom: 60px; */
-  /* right: 20px; */
-  /* position: absolute; */
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 360px;
   max-width: 100%;
+  max-height: 100%;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  overflow: hidden;
+  overflow: auto;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+
+}
+
+#katech-chatbot-container.hidden {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  top: -100% !important;
 }
 
 #katech-chatbot-header-area {
@@ -139,11 +175,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-}
-
-
-.hidden {
-  display: none;
 }
 
 
