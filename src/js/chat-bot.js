@@ -1,4 +1,4 @@
-import '../css/styles.css';
+// import '../css/styles.css';
 class ChatBotSDK {
   constructor(config, ui) {
     if (typeof config === "string") {
@@ -27,8 +27,8 @@ class ChatBotSDK {
     }
     this.apiKey = config.apiKey;
     this.loadStyles();
-    this.initUI(config.ui);
-    this.ui = config.ui;
+    this.initUI(config?.ui);
+    this.ui = config?.ui;
     this.config = config;
     this.conversationId = config.conversationId ?? null;
     this.userId = config.userId ?? null;
@@ -85,57 +85,57 @@ class ChatBotSDK {
     <div id="katech-chatbot">
     <div id="katech-chatbot-button-open">
     ${
-      ui.open.html
-        ? ui.open.html
-        : `<button style="${ui.open.style}" id="katech-chatbot-button"> <img src="${ui.open.image}" alt=""></button>`
+      ui?.open?.html
+        ? ui?.open?.html
+        : `<button style="${ui?.open?.style}" id="katech-chatbot-button"> <img src="${ui?.open?.image}" alt=""></button>`
     }
        
     </div>
     <div  id="katech-chatbot-container" class="hidden" >
         <div id="katech-chatbot-header-area">
         ${
-          ui.header.html
-            ? ui.header.html
-            : `<div style="${ui.header.style}" id="katech-chatbot-header" class="katech-chatbot-header">
+          ui?.header?.html
+            ? ui?.header?.html
+            : `<div style="${ui?.header?.style}" id="katech-chatbot-header" class="katech-chatbot-header">
                   <img
                       src="${ui?.bot?.avatar}" />
                   <div id="katech-chatbot-header_content" style="">
                       <span class="subtitle">Chat with</span>
-                      <span class="title">${ui.bot.name}</span>
+                      <span class="title">${ui?.bot?.name}</span>
                   </div>
               </div>
-              <div style="border-color:${ui.bot.color};color:${ui.bot.color}" id="katech-chatbot-header_btn-close">-</div>
+              <div style="border-color:${ui?.bot?.color};color:${ui?.bot?.color}" id="katech-chatbot-header_btn-close">-</div>
           </div>`
         }
         <div style="${
-          ui.body.style
+          ui?.body?.style
         }" id="katech-chatbot-body" class="katech-chatbot-body">
-        <div style="${ui.greeting.style}" id="katech-chatbot-greeting">
+        <div style="${ui?.greeting?.style}" id="katech-chatbot-greeting">
         ${
-          ui.greeting.html
-            ? ui.greeting.html
+          ui?.greeting?.html
+            ? ui?.greeting?.html
             : `
-            <img src="${ui.greeting.image}" />
+            <img src="${ui?.greeting?.image}" />
             <div id="">
-                <span class="title">${ui.greeting.title}</span>
+                <span class="title">${ui?.greeting?.title}</span>
             </div>`
         }
           </div>
         </div>
         <div id="katech-chatbot-footer-area">
         ${
-          ui.footer.html
-            ? ui.footer.html
-            : `<div style="${ui.footer.style}" id="katech-chatbot-footer" class="katech-chatbot-footer">
+          ui?.footer?.html
+            ? ui?.footer?.html
+            : `<div style="${ui?.footer?.style}" id="katech-chatbot-footer" class="katech-chatbot-footer">
                   <input id="katech-chatbot-input" type="text" class="katech-chatbot-input"
                     placeholder="Type your message...">
                   <div id="katech-chatbot-footer_action">
                     <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M9 7a5 5 0 0 1 10 0v8a7 7 0 1 1-14 0V9a1 1 0 0 1 2 0v6a5 5 0 0 0 10 0V7a3 3 0 1 0-6 0v8a1 1 0 1 0 2 0V9a1 1 0 1 1 2 0v6a3 3 0 1 1-6 0z" clip-rule="evenodd"></path></svg>
                     </div>
-                    <button style="background:${ui.bot.background}; color:${ui.bot.color}" id="katech-chatbot-send-button" class="katech-chatbot-send-button">
+                    <button style="background:${ui?.bot?.background}; color:${ui?.bot?.color}" id="katech-chatbot-send-button" class="katech-chatbot-send-button">
                       Send
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:${ui.bot.color};transform: ;msFilter:;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:${ui?.bot?.color};transform: ;msFilter:;">
                         <path d="m21.426 11.095-17-8A.999.999 0 0 0 3.03 4.242L4.969 12 3.03 19.758a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81zM5.481 18.197l.839-3.357L12 12 6.32 9.16l-.839-3.357L18.651 12l-13.17 6.197z"></path>
                       </svg>
                     </button>
@@ -292,16 +292,16 @@ class ChatBotSDK {
       <div id="katech-chatbot-message" class="katech-bot-message-group katech-chatbot-loading-message">
           <img src="${this.ui?.bot?.avatar}" />
           <div style="${
-            this.ui.body.message.out.style
+            this.ui?.body?.message?.out?.style
           }" class="katech-bot-message">
           ${
-            this.ui.loading.html
-              ? this.ui.loading.html
+            this.ui?.loading?.html
+              ? this.ui?.loading?.html
               : `
             <div class="typing">
-            <div style="${this.ui.loading.style}" class="typing__dot"></div>
-            <div style="${this.ui.loading.style}" class="typing__dot"></div>
-            <div style="${this.ui.loading.style}" class="typing__dot"></div>
+            <div style="${this.ui?.loading?.style}" class="typing__dot"></div>
+            <div style="${this.ui?.loading?.style}" class="typing__dot"></div>
+            <div style="${this.ui?.loading?.style}" class="typing__dot"></div>
           </div>`
           }
           </div>
@@ -333,7 +333,7 @@ class ChatBotSDK {
         "beforeend",
         `
           <div id="katech-chatbot-message" class="katech-user-message-group">
-          <div style="${this.ui.body.message.in.style}" class="katech-user-message">${message}</div>
+          <div style="${this.ui?.body?.message?.in?.style}" class="katech-user-message">${message}</div>
           </div>
       `
       );
@@ -346,7 +346,7 @@ class ChatBotSDK {
           `
           <div id="katech-chatbot-message" class="katech-bot-message-group">
               <img src="${this.ui?.bot?.avatar}" />
-              <div style="${this.ui.body.message.out.style}" class="katech-bot-message">${message}</div>
+              <div style="${this.ui?.body?.message?.out?.style}" class="katech-bot-message">${message}</div>
           </div>
         `
         );
